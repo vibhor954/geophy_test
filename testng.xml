@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DemoTestSuite" >
+    
+ 	<listeners>
+ 		<listener class-name="listener.AnnotationTransformer"/>
+        <listener class-name="listener.TestListener"/>
+<!--         <listener class-name="listener.Retry"/> -->
+<!--         <listener class-name="reporters.ExtentManager"/> -->
+ 	</listeners>
+ 	
+    <test name="DemoTestHdfc" group-by-instances="true" preserve-order="true">
+        <classes>
+            <class name="DemoTest"/>
+            <class name="base.TestBase"/>
+        </classes>
+    </test>
+</suite>
+
