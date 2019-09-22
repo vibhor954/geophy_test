@@ -376,7 +376,6 @@ public class DemoTest extends TestBase {
 	public void resetPasswordTest() {
 		String username = "";
 		String password = "";
-		String company = "";
 		oLoginPage = new LoginPage(driver);
 		oProfilePage = new ProfilePage(driver);
 		oResetPasswordPage = new ResetPasswordPage(driver);
