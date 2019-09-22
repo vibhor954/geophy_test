@@ -5,7 +5,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import logger.Log;
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.util.IOUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.springframework.util.Assert;
@@ -19,6 +18,10 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Utils {
+	
+	private Utils(){
+		
+	}
 	public static final long IMPLICIT_WAIT = 45;
 	protected static ArrayList<String> methodToBeExecuted = new ArrayList<>();
 	private static ExtentTest test;
@@ -33,8 +36,6 @@ public class Utils {
 	public static void initializeExtentTest(String methodName) {
 		test = extent.createTest(methodName + " | " + GlobalVars.browser,
 				methodName);
-		// test.assignAuthor("TTN || TestUser");
-		// test.assignCategory(this.getClass().getSimpleName());
 	}
 
 	/*
@@ -61,8 +62,7 @@ public class Utils {
 
 	/* Function to assert and log the steps info in extent report */
 	public static void assertAndlogStepInfo(boolean isResult,
-			boolean isSoftAssert, String stepInfo) throws IOException,
-			InterruptedException {
+			boolean isSoftAssert, String stepInfo){
 		logStepInfo(isResult, stepInfo);
 		if (isSoftAssert) {
 			SoftAssert sAssert = new SoftAssert();
@@ -111,70 +111,20 @@ public class Utils {
 			File screenshotLocation = new File(screen);
 			FileUtils.copyFile(screenshot, screenshotLocation);
 			Thread.sleep(2000);
-			InputStream is = new FileInputStream(screenshotLocation);
-			byte[] imageBytes = IOUtils.toByteArray(is);
 			Thread.sleep(2000);
 			Reporter.log("<a href= '" + screen + "'target='_blank' ><img src='"
 					+ screen + "'>" + screenshotName + "</a>");
 		} catch (Exception e) {
-			System.out.println(e.getStackTrace());
+			Log.error("Exception occurred in captureScreenshot method "+e.getMessage() );
 		}
-	}
-
-	/**
-	 * This function runs the adb shell command to clear previous logs
-	 */
-	public static void clearPreviousLogs() {
-		try {
-			ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "adb",
-					"logcat", "-c");
-			;
-			Process pc = pb.start();
-			try {
-				pc.waitFor();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-	}
-
-	/**
-	 * This function runs the adb shell command to get the adb logs
-	 * 
-	 * @Pre-requisite: Android build must be a debug build with log enabled.
-	 * @throws InterruptedException
-	 */
-	public static String getAnalyticsEventsLogs(String commandFilter) {
-
-		StringBuilder buffer = new StringBuilder();
-		try {
-			clearPreviousLogs();
-			ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "adb",
-					"logcat", "-d", "-e", commandFilter);
-			Process pc = pb.start();
-			InputStream is = pc.getInputStream();
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
-			String output = null;
-
-			while ((output = br.readLine()) != null) {
-				buffer.append(output);
-			}
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		return buffer.toString();
 	}
 
 	public static int getMaxRetryCount() {
 		try {
 			return Integer.parseInt(GlobalVars.prop
 					.getProperty(Constants.MAX_RETRY));
-		} catch (Exception ex) {
-			ex.printStackTrace();
+		} catch (Exception e) {
+			Log.error("Exception occurred in getMaxRetryCount method "+e.getMessage() );
 			return 0;
 		}
 	}

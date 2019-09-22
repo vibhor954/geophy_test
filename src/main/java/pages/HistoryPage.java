@@ -39,12 +39,12 @@ public class HistoryPage {
 
 	public void navigateToHistoryPage() {
 		driver.navigate().to(
-				GlobalVars.prop.getProperty(Constants.HISTORY_PAGE_URL));
+				GlobalVars.prop.getProperty(Constants.historyPAGEURL));
 	}
 
 	public boolean verifySearchHistory(String address,
-			String netOperatingIncome, String year_of_construction,
-			String number_of_units) {
+			String netOperatingIncome, String yearOfConstruction,
+			String numberOfUnits) {
 		boolean isRecentPropertyDisplayed = false;
 		boolean isRecentCreatedOnDisplayed = false;
 		boolean isRecentYearOfConstructionDisplayed = false;
@@ -58,17 +58,17 @@ public class HistoryPage {
 			String date = oCommonFunctions.getCurrentDate();
 			isRecentCreatedOnDisplayed = oCommonFunctions.isTextPresent(
 					createdOnText, date);
-			String noi_text = oCommonFunctions.getElementText(noiText, 10);
-			noi_text = noi_text.replace(",", "");
+			String noi = oCommonFunctions.getElementText(noiText, 10);
+			noi = noi.replace(",", "");
 			netOperatingIncome = netOperatingIncome.replace(" ", "").trim();
-			if (noi_text.contains(netOperatingIncome)) {
+			if (noi.contains(netOperatingIncome)) {
 				isRecentNetOperatingIncome = true;
 			}
-			;
+			
 			isRecentYearOfConstructionDisplayed = oCommonFunctions
-					.isTextPresent(yearOfConstructionText, year_of_construction);
+					.isTextPresent(yearOfConstructionText, yearOfConstruction);
 			isRecentUnitsDisplayed = oCommonFunctions.isTextPresent(unitsText,
-					number_of_units);
+					numberOfUnits);
 			if (isRecentPropertyDisplayed && isRecentCreatedOnDisplayed
 					&& isRecentYearOfConstructionDisplayed
 					&& isRecentUnitsDisplayed && isRecentNetOperatingIncome) {

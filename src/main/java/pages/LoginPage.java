@@ -6,12 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import utils.CommonFunctions;
+import utils.Constants;
+import utils.GlobalVars;
 
 public class LoginPage
 {
-    private static  WebDriver driver;
-    static CommonFunctions oCommonFunctions=null;
+    private  WebDriver driver;
+    private CommonFunctions oCommonFunctions;
     public LoginPage() {
     }
     public LoginPage(WebDriver driver) {
@@ -41,7 +44,6 @@ public class LoginPage
             oCommonFunctions.clickElement(loginButton, 20);
         } catch (Exception e) {
             Log.error("Exception occurred in Login method"+e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -51,7 +53,6 @@ public class LoginPage
         	isUserLoggedIn=driver.getPageSource().contains("Welcome");
         } catch (Exception e) {
             Log.error("Exception occurred in Login method"+e.getMessage());
-            e.printStackTrace();
         }
         return isUserLoggedIn;
     }
@@ -62,7 +63,6 @@ public class LoginPage
         	isLoginErrorMessageDisplayed=oCommonFunctions.isElementDisplayed(loginErrorMessage, 10);
         } catch (Exception e) {
             Log.error("Exception occurred in Login method"+e.getMessage());
-            e.printStackTrace();
         }
         return isLoginErrorMessageDisplayed;
     }
@@ -70,9 +70,9 @@ public class LoginPage
     public void clickSignUp() {
         try {
         	oCommonFunctions.clickElement(signUpButton, 10);
+        	oCommonFunctions.waitForURLContains(GlobalVars.prop.getProperty(Constants.signupPAGEURL), 10);
         } catch (Exception e) {
             Log.error("Exception occurred in Login method"+e.getMessage());
-            e.printStackTrace();
         }
         
     }

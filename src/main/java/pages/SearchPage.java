@@ -13,8 +13,8 @@ import utils.GlobalVars;
 
 public class SearchPage {
 	
-	 private static  WebDriver driver;
-	    static CommonFunctions oCommonFunctions=null;
+	 private  WebDriver driver;
+	 private CommonFunctions oCommonFunctions;
 	    public SearchPage() {
 	    }
 	    public SearchPage(WebDriver driver) {
@@ -50,10 +50,9 @@ public class SearchPage {
 	    	boolean isUserLoggedOut=false;
 	        try {
 	            oCommonFunctions.clickElement(logoutLink, 20);
-	            isUserLoggedOut=driver.getCurrentUrl().equals(GlobalVars.prop.getProperty(Constants.LOGIN_PAGE_URL));
+	            isUserLoggedOut=driver.getCurrentUrl().equals(GlobalVars.prop.getProperty(Constants.loginPAGEURL));
 	        } catch (Exception e) {
 	            Log.error("Exception occurred in logout method"+e.getMessage());
-	            e.printStackTrace();
 	        }
 			return isUserLoggedOut;
 	       
@@ -62,10 +61,9 @@ public class SearchPage {
 	    public boolean verifySearchPagePostLogin() {
 	        boolean isUserLoggedIn=false;
 	        try {
-	        	isUserLoggedIn=driver.getCurrentUrl().equals(GlobalVars.prop.getProperty(Constants.SEARCH_PAGE_URL));
+	        	isUserLoggedIn=driver.getCurrentUrl().equals(GlobalVars.prop.getProperty(Constants.searchPageURL));
 	        } catch (Exception e) {
 	            Log.error("Exception occurred in verifySearchPagePostLogin method"+e.getMessage());
-	            e.printStackTrace();
 	        }
 	        return isUserLoggedIn;
 	    }
@@ -84,7 +82,6 @@ public class SearchPage {
 	        	isrunValuationSuccess=oCommonFunctions.waitForURLContains("report", 20);
 	        } catch (Exception e) {
 	            Log.error("Exception occurred in runValuation method"+e.getMessage());
-	            e.printStackTrace();
 	        }
 			return isrunValuationSuccess;
 	        

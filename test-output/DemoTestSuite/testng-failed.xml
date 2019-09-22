@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [DemoTestSuite]">
+  <listeners>
+    <listener class-name="listener.AnnotationTransformer"/>
+    <listener class-name="listener.TestListener"/>
+  </listeners>
+  <test name="Geophy(failed)">
+    <classes>
+      <class name="DemoTest">
+        <methods>
+          <include name="tearDownSuite"/>
+          <include name="initializeExtentTest"/>
+          <include name="classDataInitializer"/>
+          <include name="before"/>
+          <include name="afterMethod"/>
+          <include name="loginTestwithValidCredentials"/>
+        </methods>
+      </class> <!-- DemoTest -->
+    </classes>
+  </test> <!-- Geophy(failed) -->
+</suite> <!-- Failed suite [DemoTestSuite] -->

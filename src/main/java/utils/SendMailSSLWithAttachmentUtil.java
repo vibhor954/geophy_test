@@ -1,8 +1,11 @@
 package utils;
 
 import base.TestBase;
+
 import org.testng.ITestContext;
+
 import reporters.ExtentManager;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -11,8 +14,10 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import java.io.File;
+
 import java.util.Properties;
+
+import logger.Log;
 
 public class SendMailSSLWithAttachmentUtil extends TestBase {
 
@@ -62,7 +67,7 @@ public class SendMailSSLWithAttachmentUtil extends TestBase {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(String.join(",", mailRecipientList)));
 
             // Add the subject link
-            message.setSubject("[Mobile]Test Automation Result"+Constants.REPORT_NAME);
+            message.setSubject("[Mobile]Test Automation Result"+Constants.reportNAME);
 
             // Create object to add multimedia type content
             BodyPart messageBodyPart1 = new MimeBodyPart();
@@ -85,7 +90,6 @@ public class SendMailSSLWithAttachmentUtil extends TestBase {
             MimeBodyPart messageBodyPart2 = new MimeBodyPart();
 
             // Mention the file which you want to send
-            //String filename = file.getPath();
             String filename = ExtentManager.getExtentpath();
 
 
@@ -97,7 +101,6 @@ public class SendMailSSLWithAttachmentUtil extends TestBase {
             messageBodyPart2.setDataHandler(new DataHandler(source));
 
             // set the file
-            //messageBodyPart2.setFileName(Constants.REPORT_NAME+ ".html");
             messageBodyPart2.setFileName(ExtentManager.getExtentpath());
 
             // Create object of MimeMultipart class
@@ -115,7 +118,7 @@ public class SendMailSSLWithAttachmentUtil extends TestBase {
             // finally send the email
             Transport.send(message);
 
-            System.out.println("=====Email Sent Successfully =====");
+            Log.info("Email Sent Succesfully");
         } catch (MessagingException e) {
 
             throw new RuntimeException(e);

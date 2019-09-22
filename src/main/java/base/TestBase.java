@@ -2,9 +2,12 @@ package base;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+
 import logger.Log;
+
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,11 +15,15 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
+
 import pages.HistoryPage;
 import pages.LoginPage;
 import pages.ProfilePage;
+import pages.ResetPasswordPage;
 import pages.SearchPage;
+import pages.SignupPage;
 import utils.*;
+
 import java.io.*;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -34,6 +41,8 @@ public class TestBase extends GlobalVars {
 	protected SearchPage oSearchPage = null;
 	protected HistoryPage oHistoryPage = null;
 	protected ProfilePage oProfilePage = null;
+	protected SignupPage oSignupPage = null;
+	protected ResetPasswordPage oResetPasswordPage=null;
 	DataReader oDataReader = null;
 	TestBase oTestBase = null;
 	CommonFunctions ocommonFunctions = null;
@@ -43,6 +52,7 @@ public class TestBase extends GlobalVars {
 	public TestBase() {
 
 		initGlobalVars();
+		initializeDriver();
 	}
 
 	public static void initGlobalVars() {
@@ -99,6 +109,25 @@ public class TestBase extends GlobalVars {
 				logger.error("Exception in initializeDriver ::: ", e);
 			}
 			break;
+			
+		case "edge":
+			path = System.getProperty(USER_DIR) + "/" + GlobalVars.msedgedriver;
+			try {
+				if (driver == null) {
+					System.setProperty("webdriver.edge.driver", path);
+					driver = new EdgeDriver();
+					driver.manage()
+							.timeouts()
+							.implicitlyWait(Utils.IMPLICIT_WAIT,
+									TimeUnit.SECONDS);
+				}
+			}
+
+			catch (Exception e) {
+				logger.error("Exception in initializeDriver ::: ", e);
+				e.printStackTrace();
+			}
+			break;
 
 		default:
 			throw new IllegalStateException("Unexpected value: " + browser);
@@ -110,7 +139,6 @@ public class TestBase extends GlobalVars {
 	@BeforeSuite
 	public void before() {
 		Utils.initializeExtentReport();
-		initializeDriver();
 		DOMConfigurator.configure("log4j.xml");
 		Log.initializeLogProperties();
 	}
@@ -120,8 +148,6 @@ public class TestBase extends GlobalVars {
 		className = this.getClass().getSimpleName();
 		oDataReader = new DataReader();
 		dataElementMap = oDataReader.getClassData(className);
-		oTestBase = new TestBase();
-		ocommonFunctions = new CommonFunctions();
 	}
 
 	@BeforeMethod

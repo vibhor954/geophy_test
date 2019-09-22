@@ -1,6 +1,10 @@
 package utils;
 
 public class DecodeUtil {
+	
+	private DecodeUtil(){
+		
+	}
 
 
     public static String decode(String encodedText) {
@@ -12,7 +16,6 @@ public class DecodeUtil {
             encrypted[i] -= 7;
             decrypted[i] = encrypted[i];
         }
-        System.out.println();
         return String.valueOf(decrypted);
 
 

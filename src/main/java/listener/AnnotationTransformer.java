@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import logger.Log;
+
 import org.testng.IAnnotationTransformer;
 import org.testng.annotations.ITestAnnotation;
 
@@ -25,7 +27,7 @@ public class AnnotationTransformer extends Data implements
 		try {
 			db.setupDataSheet();
 		} catch (IOException e) {
-			e.printStackTrace();
+			Log.error("Exception occurred in transform method" + e.getMessage() );
 		}
 		List<Data> list = DataReader.getDataObjectRepo();
 		Iterator<Data> itr = list.iterator();

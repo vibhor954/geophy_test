@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="10" passed="10">
+  <reporter-output>
+  </reporter-output>
+  <suite name="DemoTestSuite" duration-ms="92227" started-at="2019-09-21T14:21:25Z" finished-at="2019-09-21T14:22:57Z">
+    <groups>
+    </groups>
+    <test name="Geophy" duration-ms="92227" started-at="2019-09-21T14:21:25Z" finished-at="2019-09-21T14:22:57Z">
+      <class name="DemoTest">
+        <test-method status="PASS" signature="before()[pri:0, instance:DemoTest@4982cc36]" name="before" is-config="true" duration-ms="103" started-at="2019-09-21T19:51:25Z" finished-at="2019-09-21T19:51:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="classDataInitializer()[pri:0, instance:DemoTest@4982cc36]" name="classDataInitializer" is-config="true" duration-ms="0" started-at="2019-09-21T19:51:25Z" finished-at="2019-09-21T19:51:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- classDataInitializer -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="4" started-at="2019-09-21T19:51:25Z" finished-at="2019-09-21T19:51:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.loginTestwithValidCredentials()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="loginTestwithValidCredentials()[pri:1, instance:DemoTest@4982cc36]" name="loginTestwithValidCredentials" duration-ms="3033" started-at="2019-09-21T19:51:25Z" finished-at="2019-09-21T19:51:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTestwithValidCredentials -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-09-21T19:51:28Z" finished-at="2019-09-21T19:51:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTestwithValidCredentials status=SUCCESS method=DemoTest.loginTestwithValidCredentials()[pri:1, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="2" started-at="2019-09-21T19:51:28Z" finished-at="2019-09-21T19:51:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.loginTestwithInValidCredentials()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="loginTestwithInValidCredentials()[pri:2, instance:DemoTest@4982cc36]" name="loginTestwithInValidCredentials" duration-ms="1453" started-at="2019-09-21T19:51:28Z" finished-at="2019-09-21T19:51:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTestwithInValidCredentials -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-09-21T19:51:30Z" finished-at="2019-09-21T19:51:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTestwithInValidCredentials status=SUCCESS method=DemoTest.loginTestwithInValidCredentials()[pri:2, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="1" started-at="2019-09-21T19:51:30Z" finished-at="2019-09-21T19:51:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.runValuationTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="runValuationTest()[pri:3, instance:DemoTest@4982cc36]" name="runValuationTest" duration-ms="18020" started-at="2019-09-21T19:51:30Z" finished-at="2019-09-21T19:51:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runValuationTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="2" started-at="2019-09-21T19:51:48Z" finished-at="2019-09-21T19:51:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=runValuationTest status=SUCCESS method=DemoTest.runValuationTest()[pri:3, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="2" started-at="2019-09-21T19:51:48Z" finished-at="2019-09-21T19:51:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.verifySearchHistoryTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="verifySearchHistoryTest()[pri:4, instance:DemoTest@4982cc36]" name="verifySearchHistoryTest" duration-ms="19162" started-at="2019-09-21T19:51:48Z" finished-at="2019-09-21T19:52:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchHistoryTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-09-21T19:52:07Z" finished-at="2019-09-21T19:52:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySearchHistoryTest status=SUCCESS method=DemoTest.verifySearchHistoryTest()[pri:4, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="2" started-at="2019-09-21T19:52:07Z" finished-at="2019-09-21T19:52:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.verifyProfileDetailsTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="verifyProfileDetailsTest()[pri:5, instance:DemoTest@4982cc36]" name="verifyProfileDetailsTest" duration-ms="3438" started-at="2019-09-21T19:52:07Z" finished-at="2019-09-21T19:52:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProfileDetailsTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-09-21T19:52:10Z" finished-at="2019-09-21T19:52:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyProfileDetailsTest status=SUCCESS method=DemoTest.verifyProfileDetailsTest()[pri:5, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="1" started-at="2019-09-21T19:52:10Z" finished-at="2019-09-21T19:52:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.logoutTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="logoutTest()[pri:6, instance:DemoTest@4982cc36]" name="logoutTest" duration-ms="2679" started-at="2019-09-21T19:52:10Z" finished-at="2019-09-21T19:52:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-09-21T19:52:13Z" finished-at="2019-09-21T19:52:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=logoutTest status=SUCCESS method=DemoTest.logoutTest()[pri:6, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="1" started-at="2019-09-21T19:52:13Z" finished-at="2019-09-21T19:52:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.signUpTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="signUpTest()[pri:7, instance:DemoTest@4982cc36]" name="signUpTest" duration-ms="3254" started-at="2019-09-21T19:52:13Z" finished-at="2019-09-21T19:52:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpTest -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="2" started-at="2019-09-21T19:52:16Z" finished-at="2019-09-21T19:52:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.signUpFromExistingEmailIdTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-09-21T19:52:16Z" finished-at="2019-09-21T19:52:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signUpTest status=SUCCESS method=DemoTest.signUpTest()[pri:7, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="signUpFromExistingEmailIdTest()[pri:8, instance:DemoTest@4982cc36]" name="signUpFromExistingEmailIdTest" duration-ms="2704" started-at="2019-09-21T19:52:16Z" finished-at="2019-09-21T19:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpFromExistingEmailIdTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-09-21T19:52:19Z" finished-at="2019-09-21T19:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signUpFromExistingEmailIdTest status=SUCCESS method=DemoTest.signUpFromExistingEmailIdTest()[pri:8, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="1" started-at="2019-09-21T19:52:19Z" finished-at="2019-09-21T19:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.profileUpdateTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="profileUpdateTest()[pri:9, instance:DemoTest@4982cc36]" name="profileUpdateTest" duration-ms="3404" started-at="2019-09-21T19:52:19Z" finished-at="2019-09-21T19:52:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- profileUpdateTest -->
+        <test-method status="PASS" signature="initializeExtentTest(java.lang.reflect.Method)[pri:0, instance:DemoTest@4982cc36]" name="initializeExtentTest" is-config="true" duration-ms="1" started-at="2019-09-21T19:52:22Z" finished-at="2019-09-21T19:52:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void DemoTest.resetPasswordTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeExtentTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-09-21T19:52:22Z" finished-at="2019-09-21T19:52:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=profileUpdateTest status=SUCCESS method=DemoTest.profileUpdateTest()[pri:9, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="resetPasswordTest()[pri:10, instance:DemoTest@4982cc36]" name="resetPasswordTest" duration-ms="35037" started-at="2019-09-21T19:52:22Z" finished-at="2019-09-21T19:52:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetPasswordTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:DemoTest@4982cc36]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-09-21T19:52:57Z" finished-at="2019-09-21T19:52:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=resetPasswordTest status=SUCCESS method=DemoTest.resetPasswordTest()[pri:10, instance:DemoTest@4982cc36] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDownSuite(org.testng.ITestContext)[pri:0, instance:DemoTest@4982cc36]" name="tearDownSuite" is-config="true" duration-ms="41050" started-at="2019-09-21T19:52:57Z" finished-at="2019-09-21T19:53:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3ec9f8d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSuite -->
+      </class> <!-- DemoTest -->
+    </test> <!-- Geophy -->
+  </suite> <!-- DemoTestSuite -->
+</testng-results>

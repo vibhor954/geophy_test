@@ -13,6 +13,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.*;
 
+import logger.Log;
+
 
 public class DataReader {
 
@@ -47,14 +49,12 @@ public class DataReader {
             try{
 
                 //Initializing GeneralConfig data into Global variables
-                //org.apache.poi.ss.usermodel.Sheet generalConfigSheet = workBook.getSheetAt(0);
                 generalConfigSheet =workBook.getSheet("GeneralConfig");
 
                 //This function will initialize all general config variables based on the column names
                 initializegeneralConfigData();
                 //Initializing the test cases
                 for (int sheetNumber = 1; sheetNumber < totalSheetCount; sheetNumber++) {
-                    //Sheet sheet = (Sheet) workBook.getSheetAt(sheetNumber);
                     XSSFSheet sheet= (XSSFSheet) workBook.getSheetAt(sheetNumber);
                     Map<String, DataElements> dataElementsMap = getDataElements((org.apache.poi.ss.usermodel.Sheet) sheet);
 
@@ -63,11 +63,10 @@ public class DataReader {
 
 
             }catch(Exception e){
-                e.printStackTrace();
+             Log.error("Exception occurred in setDataObject method"+e.getMessage());
             }
 
         } else {
-            //logger.error("Data object file not found at: " + file.getAbsolutePath());
             throw new SkipException("Data object file not found at: " + file.getAbsolutePath());
         }
     }
@@ -98,7 +97,7 @@ public class DataReader {
             }
         }
         catch(Exception e){
-            e.printStackTrace();
+        	Log.error("Exception occurred in getCellData method"+e.getMessage());
         }
         return cellData.trim();
     }
@@ -119,7 +118,7 @@ public class DataReader {
             }
         }
         catch(Exception e){
-            e.printStackTrace();
+        	Log.error("Exception occurred in initializegeneralConfigData method"+e.getMessage());
         }
         return cellData.trim();
     }
@@ -141,9 +140,8 @@ public class DataReader {
 
         }
         catch(Exception e){
-            e.printStackTrace();
+        	Log.error("Exception occurred in getFieldValue method"+e.getMessage());
         }
-        //System.out.println("The value of "+fieldName+" : is: "+cellValue);
         return cellValue.trim();
 
     }
@@ -165,6 +163,9 @@ public class DataReader {
                     break;
                 case Constants.CHROMEDRIVER:
                     GlobalVars.chromedriver=getFieldValue(fieldName);
+                    break;
+                case Constants.EDGEDRIVER:
+                    GlobalVars.msedgedriver=getFieldValue(fieldName);
                     break;
                 case Constants.URL:
                     GlobalVars.url=getFieldValue(fieldName);

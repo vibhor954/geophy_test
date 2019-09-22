@@ -6,18 +6,12 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import logger.Log;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -38,7 +32,6 @@ public class CommonFunctions extends TestBase {
         }
             catch (Exception e) {
             	 driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
-                 e.printStackTrace();
                  Log.error("Exception occurred in clickElement method: "+e.getMessage());
 			}
         driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
@@ -60,7 +53,6 @@ public class CommonFunctions extends TestBase {
         }
          catch (Exception e) {
         	 driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
-            e.printStackTrace();
             Log.error("Exception occurred in sendKey method"+e.getMessage());
         }
         driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
@@ -102,7 +94,7 @@ public class CommonFunctions extends TestBase {
             Utils.logFunctionLevelLogs(true, "Text of the element is : "+text);
         }
          catch (Exception e) {
-            Log.error("Exception occurred in clickElement method: "+e.getMessage());
+            Log.error("Exception occurred in getElementText method: "+e.getMessage());
             driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
         }
         driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
@@ -119,7 +111,6 @@ public class CommonFunctions extends TestBase {
 			wait.until(ExpectedConditions.visibilityOf(element));
 		}catch(Exception e){
 			driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
-			e.printStackTrace();
 			return false;
 		}
 		driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
@@ -136,7 +127,6 @@ public class CommonFunctions extends TestBase {
 			wait.until(ExpectedConditions.urlContains(text));
 		}catch(Exception e){
 			driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
-			e.printStackTrace();
 			return false;
 		}
 		driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
@@ -147,7 +137,6 @@ public class CommonFunctions extends TestBase {
     public boolean keyPress(String key){
 		try{
 			driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-			WebDriverWait wait = null;
 			Actions act = new Actions(driver); 
 			Thread.sleep(2000);
 		    
@@ -168,7 +157,6 @@ public class CommonFunctions extends TestBase {
 			}
 			
 		}catch(Exception e){
-			e.printStackTrace();
 			driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
 			return false;
 		}
@@ -198,13 +186,16 @@ public class CommonFunctions extends TestBase {
  	
  // Assert element present
  	public static Boolean isElementPresent(WebElement element) {
+ 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
  		Boolean result = false;
  		try {
  			element.isDisplayed();
  			result = true;
- 		} catch (Exception ex) {
- 			ex.printStackTrace();
+ 		} catch (Exception e) {
+ 			Log.error("Exception occurred in isElementPresent method"+e.getMessage());
+ 			driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
  		}
+ 		driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
  		return result;
  	}
  	
@@ -220,7 +211,6 @@ public class CommonFunctions extends TestBase {
  		 text = element.getAttribute(attribute);
  		}catch(Exception e){
  			driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
- 			e.printStackTrace();
  			
  		}
  		driver.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
@@ -232,6 +222,7 @@ public class CommonFunctions extends TestBase {
         if(isResult)
             test.log(Status.PASS, "Step-"+stepNumber+": "+stepInfo+" | Status: Pass");
         else
-            test.log(Status.FAIL, "Step-"+stepNumber+": "+stepInfo+" | Status: Fail");
-    }
+			test.log(Status.FAIL, "Step-" + stepNumber + ": " + stepInfo
+					+ " | Status: Fail");
+	}
 }

@@ -29,7 +29,7 @@ public class Log {
             Log.setLevel((Level) Level.DEBUG);
 
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+        	
             e.printStackTrace();
         }
     }
